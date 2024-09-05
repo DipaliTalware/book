@@ -8,14 +8,20 @@ package org.newfische.recapproject;
 //Step 5: Create an instance of the 'Library' class with an array of 'Book' objects. Print the library information to the console.
 
 public class Book {
+    private int BookId;
     private String title;
     private String author;
     private String isbn;
 
-    public Book(String title, String author, String isbn) {
+    public Book(int BookId, String title, String author, String isbn) {
+        this.BookId = BookId;
         this.title = title;
         this.author = author;
         this.isbn = isbn;
+    }
+
+    public int getBookId() {
+        return BookId;
     }
 
     public String getTitle() {
@@ -45,6 +51,5 @@ public class Book {
     public String toString() {
         return "Book: title = " + title + ", author = " + author + ", isbn = " + isbn;
     }
-
 
 }

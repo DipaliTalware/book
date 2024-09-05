@@ -16,8 +16,34 @@ public class Library {
 
     }
 
-
     public String toString() {
         return "Library: " + Arrays.toString(books) ;
+    }
+
+    public Book[] addBook(Book newBook) {
+        Book[] newBooks = new Book[this.books.length + 1];
+
+        for(int i = 0; i < this.books.length; i++) {
+            newBooks[i] = this.books[i];
+        }
+        newBooks[newBooks.length - 1] = newBook;
+
+        this.books = newBooks;
+
+        return this.books;
+    }
+
+    public Book[] deleteBook(Book newBook) {
+        Book[] newBooks = new Book[this.books.length - 1];
+
+        for(int i = 0; i < this.books.length; i++) {
+            if(this.books[i].getBookId() != newBook.getBookId()) {
+                newBooks[i] = this.books[i];
+            }
+        }
+
+        this.books = newBooks;
+
+        return this.books;
     }
 }
